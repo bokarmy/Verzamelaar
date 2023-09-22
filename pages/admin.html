@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sneakerz Osman | GLR 2023</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+        <link rel="stylesheet" href="../pages/admin.css">
+        <script src="../app.js"></script>
+    </head>
+    <body onload="projectenAnimation();">
+        <main>
+            <h1>Admin panel</h1>
+            <form class="admin" target="frame" method="POST" action="../php/add.php">
+                <row>
+                    <column>
+                        <div class="input-text">Titel</div>
+                        <div class="input-text">Beschrijving</div>
+                        <div class="input-text">Datum</div>
+                        <div class="input-text">URL</div>
+                        <div class="input-text">Foto URL</div>
+                        <div class="input-text">Categorie</div>
+                    </column>
+                    <column>
+                        <input type="text" placeholder="Titel" name="title"/>
+                        <input type="text" placeholder="Beschrijving" name="desc"/>
+                        <input type="text" placeholder="datum" name="datum"/>
+                        <input type="text" placeholder="URL" name="url"/>
+                        <input type="text" placeholder="Foto URL" name="image"/>
+                        <select name="category" id="cato">
+                            <option value="Persoonlijk">Persoonlijk</option>
+                            <option value="School">School</option>
+                        </select>
+                        <input type="submit" value="Toevoegen"/>
+                    </column>
+                </row>
+                <div class="checkAnimation"></div>
+            </form>
+            <h2>Persoonlijk</h2>
+            <h3 class="full-width">Mijn eigen projecten, elk project hiervan heb ik alleen gemaakt in mijn vrije tijd.</h3>
+            <projects>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo2.png'>
+                    <row class='space-between'>
+                        <div class='title'>MierenGids</div>
+                        <div class='date'>May 2023</div>
+                    </row>
+                    <div class='desc'>Dit is mijn eerste persoonlijke app,  deze is gemaakt voor de mieren houder gemeenschap. In de app werk ik vooral met Machine Learning en Databases.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='2'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo5.png'>
+                    <row class='space-between'>
+                        <div class='title'>ProteinClicker</div>
+                        <div class='date'>Jan 2023</div>
+                    </row>
+                    <div class='desc'>Omdat ik klaar was met schoolprojecten wilde ik een eigen clicker game maken.  Dit is een helemaal werkend spel waarin je de progressie kan opslaan.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='5'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo3.png
+'>
+                    <row class='space-between'>
+                        <div class='title'>AntSpace</div>
+                        <div class='date'>Aug 2021</div>
+                    </row>
+                    <div class='desc'>Ik wilde proberen een werkende webshop te maken waarin het mogelijk is om te betalen met een werkende cart. Hierin zijn ook telefoon achtergronden te downloaden die ik heb gemaakt.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='3'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo4.png'>
+                    <row class='space-between'>
+                        <div class='title'>Beurs-Agenda</div>
+                        <div class='date'>May 2023</div>
+                    </row>
+                    <div class='desc'>De app scrapped alle beurzen met begin en eind datum,  locatie en titels van 40 verschillende beurs agenda websites en voegd ze allemaal in 1 app toe. </div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='4'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo16.png'>
+                    <row class='space-between'>
+                        <div class='title'>Djay.nl</div>
+                        <div class='date'>Mar 2023</div>
+                    </row>
+                    <div class='desc'>Voor mijn echt portfolio zal ik Djay.nl gaan gebruiken.  Hier staat een tijdelijke half afgemaakte website op.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='20'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+            </projects>
+            <h2>School projecten</h2>
+            <h3 class="full-width">Deze projecten zijn gemaakt voor een verplichte of vrijwillige opdracht voor Grafisch
+            Lyceum Rotterdam.</h3>
+            <projects>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo1.png'>
+                    <row class='space-between'>
+                        <div class='title'>GLR Schoolfeest</div>
+                        <div class='date'>Jun 2023</div>
+                    </row>
+                    <div class='desc'>We kregen de opdracht om een full stack web en mobiele app te maken voor het schoolfeest voor GLR.  Hierin moesten tickets verkocht worden.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='1'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo6.png'>
+                    <row class='space-between'>
+                        <div class='title'>Quizzie</div>
+                        <div class='date'>Dec 2023</div>
+                    </row>
+                    <div class='desc'>Voor een opdracht voor GLR, moesten we een quiz maken. Wij besloten om een quiz te maken over wii games. Deze quiz website was gemaakt in HTML, CSS en JS</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='6'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo7.png'>
+                    <row class='space-between'>
+                        <div class='title'>Show your zoo</div>
+                        <div class='date'>Okt 2023</div>
+                    </row>
+                    <div class='desc'>Dit was de eerste echte opdracht voor GLR, dezee opdracht was gemaakt met een groep van 3 mensen. Het is een namaak website voor Blijdorp</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='7'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo8.png'>
+                    <row class='space-between'>
+                        <div class='title'>Restaurant</div>
+                        <div class='date'>Mar 2023</div>
+                    </row>
+                    <div class='desc'>We moesten voor GLR een restaurant website maken, dit restaurant bestaat niet echt.  Het is een restaurant met vooral turkse koekjes.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='8'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo9.png'>
+                    <row class='space-between'>
+                        <div class='title'>Promote It</div>
+                        <div class='date'>Jan 2023</div>
+                    </row>
+                    <div class='desc'>Voor de opdracht van GLR moesten we een website maken die een bepaald onderwerp promote. Ik had gekozen voor WK 2023.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='9'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo10.png'>
+                    <row class='space-between'>
+                        <div class='title'>Eindopdracht 1</div>
+                        <div class='date'>Sept 2023</div>
+                    </row>
+                    <div class='desc'>Dit was het eerste eindopdracht van GLR, hierbij moesten we allemaal opdrachten maken met een website die herheen lijdt.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='10'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo10.png'>
+                    <row class='space-between'>
+                        <div class='title'>Eindopracht 2</div>
+                        <div class='date'>Nov 2023</div>
+                    </row>
+                    <div class='desc'>Dit was de tweede eindopdracht. We moesten een aantal onderwerpen in de website verwerken.  De hover effect van de website had ik zelf gemaakt zonder library.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='11'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo11.png'>
+                    <row class='space-between'>
+                        <div class='title'>Javascript 1</div>
+                        <div class='date'>Dec 2023</div>
+                    </row>
+                    <div class='desc'>Dit was de eerste javascript opdracht.  Hiervoor hadden we een aantal opdracht om javascript websites van te maken.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='12'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo11.png'>
+                    <row class='space-between'>
+                        <div class='title'>Javascript 2</div>
+                        <div class='date'>Feb 2023</div>
+                    </row>
+                    <div class='desc'>Dit was de tweede javascript opdracht.  Hiervoor hadden we een aantal opdracht om javascript websites van te maken.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='13'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo11.png'>
+                    <row class='space-between'>
+                        <div class='title'>Javascript 3</div>
+                        <div class='date'>Apr 2023</div>
+                    </row>
+                    <div class='desc'>Dit was de derde javascript opdracht.  Hiervoor hadden we een aantal opdracht om javascript websites van te maken.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='14'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo12.png'>
+                    <row class='space-between'>
+                        <div class='title'>PHP Opdracht</div>
+                        <div class='date'>Jun 2023</div>
+                    </row>
+                    <div class='desc'>Dit was de eerste echte PHP opdracht.  Hiervoor hadden we een aantal opdracht om php websites van te maken.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='15'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo13.png'>
+                    <row class='space-between'>
+                        <div class='title'>Partij van Mittens</div>
+                        <div class='date'>May 2023</div>
+                    </row>
+                    <div class='desc'>Voor burgerschap moesten we een partij aanmaken met een logo en website. Het logo was gemaakt met AI, en de website had ik in 10 minuten gemaakt.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='16'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo14.png'>
+                    <row class='space-between'>
+                        <div class='title'>McGLR</div>
+                        <div class='date'>Dec 2023</div>
+                    </row>
+                    <div class='desc'>Met PHP hadden we een opdracht gemaakt voor GLR. Hierin kan je een bestelling plaatsen die in een database werd gezet.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='17'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo15.png'>
+                    <row class='space-between'>
+                        <div class='title'>Splashscreen</div>
+                        <div class='date'>Okt 2023</div>
+                    </row>
+                    <div class='desc'>Om een richting te kiezen in GLR, moesten we allerlij minor opdrachten maken om erachter te komen wat we het leukste vonden. Dit was de digital Signage opdracht.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='18'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo12.png'>
+                    <row class='space-between'>
+                        <div class='title'>Proces Opdracht</div>
+                        <div class='date'>Apr 2023</div>
+                    </row>
+                    <div class='desc'>In het vak Proces op GLR moesten we een website maken met PHP waarin je taken kon toevoegen, wijzigen of verwijderen.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='19'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+                <project class='admin'>
+                    <img loading='lazy' src='../media/logos/logo17.png'>
+                    <row class='space-between'>
+                        <div class='title'>Vijfde Verdieping</div>
+                        <div class='date'>Jun 2023</div>
+                    </row>
+                    <div class='desc'>Als eindopdracht van het eerste schooljaar moesten we een challenge uitvoeren. Hiervoor kozen wij een website voor op een nieuw scherm in de gang.  Hier hadden we een aantal dagen voor.</div>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_project' value='21'>
+                        <button type='submit'>
+                            <img class='trash' src='../media/trash.svg' ß>
+                        </button>
+                    </form>
+                </project>
+            </projects>
+            <footer class="relative">
+                © 2023 <a target="_blank" href="https://djay.nl/">Djay.nl</a>
+                , All rights
+            reserved.
+        
+            </footer>
+        </main>
+        <iframe id="none" name="frame"></iframe>
+    </body>
+</html>
