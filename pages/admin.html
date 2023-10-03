@@ -20,8 +20,9 @@
             <div class="input-text">Datum</div>
             <input type="text" placeholder="Datum" name="datum" required>
 
-            <div class="input-text">URL</div>
-            <input type="text" placeholder="URL" name="url" required>
+            <div class="input-text">Prijs</div>
+            <input type="text" placeholder="Prijs" name="price" required>
+
 
             <div class="input-text">Foto URL</div>
             <input type="text" placeholder="Foto URL" name="image" required>
@@ -38,16 +39,29 @@
         <div class="category-container">
             <h2>Persoonlijk</h2>
             <div id="personalProjectsContainer" class="projects-container">
-                <!-- Persoonlijke projecten worden hier weergegeven -->
-            </div>
-        </div>
-
-        <div class="category-container">
+               <!-- ... -->
+<div class="project" id="project1">
+    <h3>Project 1</h3>
+    <p>Beschrijving van project 1.</p>
+    <!-- Other project details -->
+    <button class="delete-button" onclick="deleteProject(this)">Verwijder</button>
+</div>
+ </div>
+  <div class="category-container">
             <h2>School</h2>
             <div id="schoolProjectsContainer" class="projects-container">
-                <!-- Schoolprojecten worden hier weergegeven -->
-            </div>
-        </div>
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Beschrijving van project 1.</p>
+                    <!-- Other project details -->
+            
+                 
+                    <button class="delete-button" onclick="deleteProject(this)">Verwijder</button>
+
+
+
+                </div>
+            
     </main>
     <script src="../app.js"></script> <!-- JavaScript hier toevoegen -->
 </body>
