@@ -1,91 +1,102 @@
-document.getElementById('projectForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent default form behavior
+document.addEventListener('DOMContentLoaded', () => {
+  const projectForm = document.getElementById('projectForm');
+  const shoeContainer = document.getElementById('shoeContainer');
+  
 
-  // Get the project information from the form
-  const title = this.elements['title'].value;
-  const description = this.elements['desc'].value;
-  const imageUrl = this.elements['image'].value;
-  const price = this.elements['price'].value;
+  projectForm.addEventListener('submit', function(event) {
+      event.preventDefault();
 
-  // Create a unique identifier for the shoe card
-  const shoeCardId = `shoe_${Date.now()}`;
+      const title = this.elements['title'].value;
+      const description = this.elements['description'].value;
+      const imageUrl = this.elements['imageUrl'].value;
+      const price = this.elements['price'].value;
 
-  // Create an object to represent the shoe card
-  const shoeCard = {
-    title,
-    description,
-    imageUrl,
-    price
-  };
+      const shoeCardElement = document.createElement('div');
+      shoeCardElement.classList.add('shoe-card');
 
-  // Store the shoe card data in localStorage
-  localStorage.setItem(shoeCardId, JSON.stringify(shoeCard));
+      shoeCardElement.innerHTML = `
+          <h3>${title}</h3>
+          <p>${description}</p>
+          <p>Price: $${price}</p>
+          <img src="${imageUrl}" alt="${title}">
+          <button class="delete-button" onclick="deleteShoe('${title}')">Delete</button>
+      `;
 
-  // Reset the form
-  this.reset();
+      // Store the shoe data in localStorage
+      const shoeData = {
+          title,
+          description,
+          imageUrl,
+          price
+      };
+      localStorage.setItem(title, JSON.stringify(shoeData));
 
-  // Call a function to update the shoe cards on the index page
-  updateShoeCards();
+      // Append the shoe card to the shoeContainer
+      shoeContainer.appendChild(shoeCardElement);
+      this.reset();
+  });
+
+  // Load the shoe data from localStorage on page load
+  for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const shoeData = JSON.parse(localStorage.getItem(key));
+
+      const shoeCardElement = document.createElement('div');
+      shoeCardElement.classList.add('shoe-card');
+      shoeCardElement.id = key; // Set an ID for the shoe card using the key (title)
+
+      shoeCardElement.innerHTML = `
+          <h3>${shoeData.title}</h3>
+          <p>${shoeData.description}</p>
+          <p>Price: $${shoeData.price}</p>
+          <img src="${shoeData.imageUrl}" alt="${shoeData.title}">
+          <button class="delete-button" onclick="deleteShoe('${shoeData.title}')">Delete</button> <!-- Add the onclick here -->
+      `;
+
+      shoeContainer.appendChild(shoeCardElement);
+  }
 });
 
-function deleteProject(button) {
-  // Extract the project ID from the button's ID attribute
-  const projectId = button.id;
+function deleteShoe(title) {
+  // Remove the shoe data from localStorage
+  localStorage.removeItem(title);
 
-  // Remove the project from localStorage using its ID
-  localStorage.removeItem(`shoe_${projectId}`);
-
-  // Remove the project from the DOM
-  const projectElement = document.getElementById(projectId);
-  if (projectElement) {
-    projectElement.remove();
-  } else {
-    console.error(`Project with ID ${projectId} not found.`);
+  // Remove the shoe card from the shoeContainer
+  const shoeCardElement = document.getElementById(title);
+  if (shoeCardElement) {
+      shoeCardElement.remove();
   }
-  // Optionally, update the shoe cards after deletion
-  updateShoeCards();
 }
 
-function updateShoeCards() {
-  const adminPersonalProjectsContainer = document.getElementById('personalProjectsContainer');
-  const adminSchoolProjectsContainer = document.getElementById('schoolProjectsContainer');
+function displayShoes() {
+  const shoeDisplayContainer = document.getElementById('shoeDisplayContainer');
 
-  // Clear any existing shoe cards
-  adminPersonalProjectsContainer.innerHTML = '';
-  adminSchoolProjectsContainer.innerHTML = '';
+  // Clear any existing content in the display container
+  shoeDisplayContainer.innerHTML = '';
 
-  // Iterate over localStorage keys and add shoe cards to the respective containers
+  // Iterate over localStorage keys and add shoe cards to the display container
   for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const data = JSON.parse(localStorage.getItem(key));
+      const key = localStorage.key(i);
+      const shoeData = JSON.parse(localStorage.getItem(key));
 
-    const shoeCardElement = document.createElement('div');
-    shoeCardElement.classList.add('shoe-card');
-    shoeCardElement.dataset.title = data.title;  // Set the title as a data attribute
-    shoeCardElement.innerHTML = `
-      <img src="${data.imageUrl}" alt="${data.title}">
-      <h2>${data.title}</h2>
-      <p>Prijs: $${data.price}</p>
-      <button class="delete-button" onclick="deleteProject(this)">Verwijder</button>
-    `;
+      const shoeCardElement = document.createElement('div');
+      shoeCardElement.classList.add('shoe-card');
 
-    // Append the shoe card to the appropriate container based on the key prefix
-    if (key.startsWith('shoe_')) {
-      adminPersonalProjectsContainer.appendChild(shoeCardElement);
-    } else if (key.startsWith('school_')) {
-      adminSchoolProjectsContainer.appendChild(shoeCardElement);
-    }
+      shoeCardElement.innerHTML = `
+          <div class="shoe-details">
+              <h3>${shoeData.title}</h3>
+              <p>${shoeData.description}</p>
+              <p>Price: $${shoeData.price}</p>
+              <img src="${shoeData.imageUrl}" alt="${shoeData.title}">
+          </div>
+      `;
+
+      shoeDisplayContainer.appendChild(shoeCardElement);
   }
 }
 
-// Call the updateShoeCards function on page load to display any existing shoe cards
+
+// Call the displayShoes function on page load to display the shoes in the index.html
 window.addEventListener('load', () => {
-  console.log("Page loaded."); // Check if the page is loading
-
-  // Check if the personal and school containers exist
-  console.log(document.getElementById('personalProjectsContainer'));
-  console.log(document.getElementById('schoolProjectsContainer'));
-
-  // Ensure the updateShoeCards function is being called
-  updateShoeCards();
+  displayShoes();
 });

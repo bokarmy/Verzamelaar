@@ -138,39 +138,62 @@ nav ul li a{
 label:hover{
     cursor: pointer;
 }
-/* Main */
 
-main {
-    display: flex;
-    flex-wrap: wrap;
+/* Search */
+.search-section {
     padding: 20px;
+    text-align: center;
+}
+
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+
+/* Main */
+.container {
+    max-width: 1200px;
+    width: 80%; /* Adjust the width to your preference */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center; /* Center the title */
+}
+
+.shoe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .shoe-card {
-    border: 1px solid var(--color-primary);
-    border-radius: 10px;
-    margin: 10px;
+    background-color: #dbd4d4;
     padding: 20px;
-    width: 200px;
-    background-color: white;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.shoe-card img {
-    width: 100%;
     border-radius: 10px;
-}
-
-.shoe-card h2 {
-    margin-top: 10px;
-    font-size: 1.2em;
-}
-
-.shoe-card p {
-    margin: 5px 0;
+    transition: transform 0.3s;
+    text-align: center;
 }
 
 .shoe-card:hover {
     transform: scale(1.05);
+}
+
+.shoe-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.shoe-card img:hover {
+    transform: scale(1.1);
 }

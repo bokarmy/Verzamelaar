@@ -4,65 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sneakerz Osman | GLR 2023</title>
-    <link rel="stylesheet" href="./admin.css"> <!-- Stijlen hier toevoegen -->
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
     <main>
-        <h1>Admin panel</h1>
+        <h1>Admin Panel</h1>
         <form class="admin" id="projectForm">
-            <div class="input-text">Titel</div>
-            <input type="text" placeholder="Titel" name="title" required>
+            <div class="input-text">Title</div>
+            <input type="text" placeholder="Title" name="title" required>
 
-            <div class="input-text">Beschrijving</div>
-            <input type="text" placeholder="Beschrijving" name="desc" required>
+            <div class="input-text">Description</div>
+            <input type="text" placeholder="Description" name="description" required>
 
-            <div class="input-text">Datum</div>
-            <input type="text" placeholder="Datum" name="datum" required>
+            <div class="input-text">Price</div>
+            <input type="text" placeholder="Price" name="price" required>
 
-            <div class="input-text">Prijs</div>
-            <input type="text" placeholder="Prijs" name="price" required>
+            <div class="input-text">Image URL</div>
+            <input type="text" placeholder="Image URL" name="imageUrl" required>
 
-
-            <div class="input-text">Foto URL</div>
-            <input type="text" placeholder="Foto URL" name="image" required>
-
-            <div class="input-text">Categorie</div>
-            <select name="category" id="cato" class="category-select" required>
-                <option value="Persoonlijk">Persoonlijk</option>
-                <option value="School">School</option>
+            <div class="input-text">Category</div>
+            <select name="category" required>
+                <option value="Nike">Nike</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Yeezy">Yeezy</option>
             </select>
 
-            <input type="submit" value="Toevoegen">
+
+            <input type="submit" value="Add Shoe">
         </form>
-
-        <div class="category-container">
-            <h2>Persoonlijk</h2>
-            <div id="personalProjectsContainer" class="projects-container">
-               <!-- ... -->
-<div class="project" id="project1">
-    <h3>Project 1</h3>
-    <p>Beschrijving van project 1.</p>
-    <!-- Other project details -->
-    <button class="delete-button" onclick="deleteProject(this)">Verwijder</button>
-</div>
- </div>
-  <div class="category-container">
-            <h2>School</h2>
-            <div id="schoolProjectsContainer" class="projects-container">
-                <div class="project">
-                    <h3>Project 1</h3>
-                    <p>Beschrijving van project 1.</p>
-                    <!-- Other project details -->
-            
-                 
-                    <button class="delete-button" onclick="deleteProject(this)">Verwijder</button>
-
-
-
-                </div>
-            
     </main>
-    <script src="../app.js"></script> <!-- JavaScript hier toevoegen -->
+    <div id="shoeContainer" class="projects-container"></div>
+   
+    <script src="../app.js"></script>
 </body>
 </html>
