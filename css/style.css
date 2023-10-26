@@ -153,7 +153,7 @@ label:hover{
 
 
 
-/* Main */
+/* Main shoes.php */
 .container {
     max-width: 1200px;
     width: 80%; /* Adjust the width to your preference */
@@ -196,4 +196,43 @@ label:hover{
 
 .shoe-card img:hover {
     transform: scale(1.1);
+}
+
+/* Main index.html*/
+.image-slider-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Adjust the height as needed for your design */
+}
+.image-slider {
+    max-width: 100%; /* Make the slider responsive */
+    height: auto; /* Allow the height to adjust according to the aspect ratio */
+    text-align: center; /* Center the content inside the slider */
+}
+.image-slider img {
+    max-width: 100%;
+    max-height: 100%;
+}
+@media (max-width: 768px) {
+    .image-slider-container {
+        padding: 20px; /* Add padding to the container on smaller screens */
+    }
+
+    .image-slider {
+        max-width: 100%; /* Keep the slider responsive */
+    }
+}
+
+.shoe-rotation {
+    /* Add CSS for the 360-degree shoe rotation container */
+}
+
+.trending-shoes {
+    text-align: center;
+    padding: 20px;
+}
+.trending-shoes h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }

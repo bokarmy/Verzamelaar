@@ -10,29 +10,23 @@
 <body>
     <main>
         <h1>Admin Panel</h1>
-        <form class="admin" id="projectForm">
+        <form class="admin" id="addShoeForm" action="admin.php" method="post">
             <div class="input-text">Title</div>
             <input type="text" placeholder="Title" name="title" required>
-
+        
             <div class="input-text">Description</div>
             <input type="text" placeholder="Description" name="description" required>
-
+        
             <div class="input-text">Price</div>
             <input type="text" placeholder="Price" name="price" required>
-
+        
             <div class="input-text">Image URL</div>
             <input type="text" placeholder="Image URL" name="imageUrl" required>
-
-            <div class="input-text">Category</div>
-            <select name="category" required>
-                <option value="Nike">Nike</option>
-                <option value="Adidas">Adidas</option>
-                <option value="Yeezy">Yeezy</option>
-            </select>
-
-
+        
             <input type="submit" value="Add Shoe">
         </form>
+        
+        
     </main>
     <div id="shoeContainer" class="projects-container"></div>
    
