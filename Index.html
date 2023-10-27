@@ -17,9 +17,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!--360 degree-->
+   
+
 
 </head>
 <body>
+    <a name="top"></a>
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
@@ -27,10 +31,10 @@
         </label>
         <a href="#"><label class="logo">Sneakerz</label></a>
         <ul>
-            <li><a class="active" href="index.html">Home</a></li>
+            <li><a class="active" href="Index.html">Home</a></li>
             <li><a href="./pages/shoes.php">Sneakers</a></li>
             <li><a href="./pages/about.html">About</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="./pages/contact.php">Contact</a></li>
             <li><a href="./pages/admin.php">Admin</a></li>
         </ul>
     </nav>
@@ -49,24 +53,55 @@
         </div>
     </div>
 
-        <!-- 360-degree Shoe Rotation -->
-        <div class="shoe-rotation">
-            <!-- Add your 360-degree shoe rotation HTML structure here -->
-        </div>
+       
 
-        <!-- Trending Shoes -->
-        <div class="trending-shoes">
-            <h2>Trending Shoes</h2>
-            <div class="shoe-card">Shoe 1</div>
-            <div class="shoe-card">Shoe 2</div>
-            <div class="shoe-card">Shoe 3</div>
+    <div class="trending-shoes">
+        <h2>Trending Shoes</h2>
+        <div class="shoes-cards">
+            <img src="./media/schoen7.png" alt="Air Jordan 1 Retro High x Travis Scott">
+            <p>Air Jordan 1 Retro High x Travis Scott</p>
+            <p>$1899,-</p>
         </div>
+        <div class="shoes-cards">
+            <img src="./media/schoen8.png" alt="Air Jordan 1 Retro High Dark Mocha">
+            <p>Air Jordan 1 Retro High Dark Mocha</p>
+            <p>$550,-</p>
+            <button onclick="window.location.href='./pages/shoes.php'">Bekijk the sneakers</button>
+        </div>
+        <div class="shoes-cards">
+            <img src="./media/schoen9.png" alt="Air Jordan 4 Retro Black Cat">
+            <p>Air Jordan 4 Retro Black Cat (2022)</p>
+            <p>$1058,-</p>
+        </div>
+    </div>
+    
+
+    
+    
+
     </main>
 
     <!-- Footer -->
     <footer>
-        <!-- Your footer code (not included in the provided HTML) -->
+        <div class="footer-content">
+            <div class="go-to-top">
+                <a href="#top">Ga naar boven <i class="fas fa-arrow-up"></i></a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="./pages/shoes.php">Sneakers</a></li>
+                    <li><a href="./pages/about.html">Over ons</a></li>
+                    <li><a href="./contact.php">Contact</a></li>
+                    <li><a href="./pages/admin.php">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-image">
+            
+        </div>
     </footer>
+    
     <script src="./app.js"></script>
 </body>
 </html>

@@ -32,8 +32,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: var(--color-background);
-
+    background-color: var(--color-background);    
 }
 
 nav{
@@ -198,41 +197,181 @@ label:hover{
     transform: scale(1.1);
 }
 
-/* Main index.html*/
+
+
+/* Main index.html */
 .image-slider-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Adjust the height as needed for your design */
+    justify-content: center; /* Horizontaal centreren */
+    align-items: center; /* Verticaal centreren */
+    height: 75vh; /* Pas de hoogte aan zoals nodig voor je ontwerp */
 }
+
 .image-slider {
-    max-width: 100%; /* Make the slider responsive */
-    height: auto; /* Allow the height to adjust according to the aspect ratio */
-    text-align: center; /* Center the content inside the slider */
+    max-width: 100%; /* Maximale breedte van de slider is 100% */
+    text-align: center; /* Centreer de inhoud in de slider */
+    padding: 20px; /* Voeg wat padding toe om de afbeeldingen van de randen weg te houden */
 }
+
 .image-slider img {
     max-width: 100%;
     max-height: 100%;
+    margin: 0 auto; /* Voeg deze regel toe om de afbeeldingen horizontaal te centreren */
 }
+
 @media (max-width: 768px) {
     .image-slider-container {
-        padding: 20px; /* Add padding to the container on smaller screens */
+        padding: 20px; /* Voeg padding toe aan de container op kleinere schermen, zoals eerder gedefinieerd */
     }
 
     .image-slider {
-        max-width: 100%; /* Keep the slider responsive */
+        max-width: 100%; /* Behoud de responsiviteit van de slider */
     }
-}
-
-.shoe-rotation {
-    /* Add CSS for the 360-degree shoe rotation container */
 }
 
 .trending-shoes {
     text-align: center;
     padding: 20px;
 }
+
 .trending-shoes h2 {
     font-size: 24px;
     margin-bottom: 20px;
+}
+.shoes-cards {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd; /* Voeg een rand toe rond elke kaart */
+    border-radius: 5px; /* Voeg afgeronde hoeken toe aan de kaart */
+    width: 250px; /* Pas de breedte aan zoals nodig */
+    padding-bottom: 20px;
+}
+.shoes-cards button {
+    background-color: #007bff; /* Achtergrondkleur van de knop */
+    color: #fff; /* Tekstkleur van de knop */
+    padding: 10px 20px; /* Binnenruimte van de knop */
+    border: none; /* Verwijder de rand van de knop */
+    border-radius: 5px; /* Rond de hoeken van de knop af */
+    cursor: pointer; /* Wijs op een aanwijsaanwijzer toe aan de knop */
+    font-size: 16px; /* Tekengrootte van de knop */
+}
+
+.shoes-cards button:hover {
+    background-color: #0056b3; /* Achtergrondkleur van de knop bij hover */
+}
+
+.shoes-cards img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.shoes-cards p {
+    margin: 5px 0;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333; /* Achtergrondkleur van de footer */
+    color: #fff; /* Tekstkleur in de footer */
+    padding: 20px; /* Binnenruimte van de footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.go-to-top a {
+    color: #fff; /* Tekstkleur van de "Ga naar boven" link */
+    text-decoration: none;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff; /* Tekstkleur van de footerlinks */
+    text-decoration: none;
+}
+
+.footer-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Contact */
+.containercont{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Stijl voor de 'Contact us!' kop */
+.contact h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Stijl voor het formuliercontainer */
+.form-containercont {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Stijl voor het formulier binnen het formuliercontainer */
+.formcont {
+    text-align: left;
+}
+
+/* Stijl voor formuliervelden en labels */
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Stijl voor de verzendknop */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Optioneel: Stijl voor het succesbericht */
+.success-message {
+    color: #4CAF50;
+    margin-top: 10px;
+    text-align: center;
 }

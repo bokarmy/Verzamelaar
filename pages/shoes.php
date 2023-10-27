@@ -21,10 +21,10 @@
         </label>
         <a href="#"><label class="logo">Sneakerz</label></a>
         <ul>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Index.html">Home</a></li>
             <li><a class="active" href="shoes.php">Sneakers</a></li>
             <li><a href="./about.html">About</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="./contact.php">Contact</a></li>
             <li><a href="./admin.php">Admin</a></li>
         </ul>
     </nav>
@@ -73,5 +73,25 @@
             </div>
         </div>
     </main>
+     <!-- Footer -->
+     <footer>
+        <div class="footer-content">
+            <div class="go-to-top">
+                <a href="#top">Ga naar boven <i class="fas fa-arrow-up"></i></a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="./pages/shoes.php">Sneakers</a></li>
+                    <li><a href="./pages/about.html">Over ons</a></li>
+                    <li><a href="./contact.php">Contact</a></li>
+                    <li><a href="./pages/admin.php">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-image">
+            
+        </div>
+    </footer>
 </body>
 </html>
