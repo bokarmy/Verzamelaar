@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../media/logosneaker.png">
     <title>Index</title>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,13 +20,13 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <a href="#"><label class="logo">Sneakerz</label></a>
+        <a href="../Index.html"><label class="logo">Sneakerz</label></a>
         <ul>
             <li><a href="../Index.html">Home</a></li>
             <li><a class="active" href="shoes.php">Sneakers</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="./contact.php">Contact</a></li>
-            <li><a href="./admin.php">Admin</a></li>
+            <li><a href="./login.html">Admin</a></li>
         </ul>
     </nav>
     <section class="search-section">
@@ -62,6 +63,8 @@
                         echo '<p>' . $row["description"] . '</p>';
                         echo '<p>Price: $' . $row["price"] . '</p>';
                         echo '<img src="' . $row["imageUrl"] . '" alt="' . $row["title"] . '">';
+                        echo '<a href="bestel.php?id=' . $row["id"] . '&title=' . urlencode($row["title"]) . '&image=' . urlencode($row["imageUrl"]) . '">Bestel</a>';
+
                         echo '</div>';
                     }
                 } else {
@@ -81,11 +84,11 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="Index.html">Home</a></li>
-                    <li><a href="./pages/shoes.php">Sneakers</a></li>
-                    <li><a href="./pages/about.html">Over ons</a></li>
+                    <li><a href="../Index.html">Home</a></li>
+                    <li><a href="./shoes.php">Sneakers</a></li>
+                    <li><a href="./about.html">About us</a></li>
                     <li><a href="./contact.php">Contact</a></li>
-                    <li><a href="./pages/admin.php">Admin</a></li>
+                    <li><a href="./login.html">Admin</a></li>
                 </ul>
             </div>
         </div>

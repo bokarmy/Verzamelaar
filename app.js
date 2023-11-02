@@ -15,7 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         this.reset();
     });
+  shoeContainer.addEventListener('click', function (event) {
+        if (event.target && event.target.classList.contains('order-button')) {
+            const shoeId = event.target.getAttribute('data-id');
+            const shoeTitle = event.target.parentElement.querySelector('h3').textContent;
 
+            // Doorverwijs naar de bestelpagina met de schoen-id en -titel
+            window.location.href = 'bestel.php?id=' + shoeId + '&title=' + shoeTitle;
+        }
+    });
     shoeContainer.addEventListener('submit', function(event) {
         event.preventDefault();
 

@@ -48,6 +48,7 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" href="../media/logosneaker.png">
     <!-- Voeg de nodige metatags en stijlen toe -->
 </head>
 <body>
